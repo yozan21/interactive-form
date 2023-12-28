@@ -42,7 +42,7 @@ main{
 .card__front-number{
     display: block;
     margin-top: 45px;
-    font-size: 25px;
+    font-size: 26px;
     letter-spacing: 2.6px;
     margin-bottom: 20px;
 }
@@ -149,7 +149,7 @@ input.error{
     transition: opacity 0.2s ease-in-out;
 }
 input.side-ways{
-    width: 22%;
+    width: 17%;
     margin-right: 6px;
 }
 .input__sideWays{
@@ -158,10 +158,10 @@ input.side-ways{
     flex-wrap: nowrap;
 }
 .input__sideWays-exp{
-    width: 96%;
+    width: 140%;
 }
 input#cvc{ 
-    width: 78%;
+    width: 74%;
 }
 /* .side-ways{
     width: 27%;
@@ -280,7 +280,7 @@ input#cvc{
         display: block;
         margin-top: 25px;
         font-size: 19.5px;
-        letter-spacing: 1.2px;
+        letter-spacing: 1.5px;
         margin-bottom: 10px;
     }
     .card__front-name{
@@ -289,12 +289,13 @@ input#cvc{
         letter-spacing: 1.5px;
     }
     .card__front-exp{
-        position: relative;
+        position: absolute;
         font-size: 11px;
         letter-spacing: 1.5px;
-        /* margin-left: 12.5rem;    */
-        left: 6.2rem;
-        top: 0rem;
+        /* margin-left: 0rem;   
+        margin-top: 0rem; */
+        left: 12.5rem;
+        top: 6.3rem;
     }
     .card__back-content{
         position: absolute;
@@ -302,7 +303,7 @@ input#cvc{
         z-index: 1;
         margin-top: 0rem;
         margin-left: 0rem;
-        top: 8.8rem;
+        top: 8.9rem;
         left: 13rem;
     }
     .form-container{
@@ -318,6 +319,9 @@ input#cvc{
     input.side-ways{
         width: 18%;
         margin-right: 5px;
+    }
+    .input__sideWays-exp{
+        width: 92%;
     }
     .form-submitted{
         width: 100%;

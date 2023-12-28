@@ -46,7 +46,6 @@ const checkBlank = function(data){
 }
 
 const checkError = function (data){
-  console.log(data);
   let value = false;
 
   //Helper functions
@@ -107,6 +106,9 @@ inputForm.addEventListener("submit", (e) => {
   //Return if found any errors
   if(isBlank || isError) return;
 
+  formDetails.forEach(inp => {
+    document.querySelector(`#${inp[0]}`).value = '';
+  })
   inputForm.classList.add('hidden');
   formSubmitted.classList.remove('hidden');
 
@@ -115,31 +117,30 @@ inputForm.addEventListener("submit", (e) => {
 //Real time data display
 inputForm.addEventListener('input', function(e){
   const targetEl = e.target
-  const formData = [...new FormData(inputForm)];
-  // if(targetEl === inputNumber && targetEl.value.length <= 16) {
-  //   console.log();
-  //   const inputValue = targetEl.value.replaceAll(' ', '').toUpperCase(); // Remove space character
-  //   const paddedValue = inputValue.padEnd(16, '0');
-  //   const formattedValue = paddedValue.replace(/(.{4})/g, '$1 ').trim();
-  //   cardNumberFront.textContent = formattedValue;
-  // }
-  // if(targetEl === inputName){
-  //   cardNameFront.textContent = targetEl.value;
-  // }
-  // if(targetEl === inputMonth || targetEl === inputYear){
-  //   document.querySelector(`.card__front-${targetEl.id}`).textContent = targetEl.value.padStart(2,'0');
-  // }
-  // if(targetEl === inputCvc){
-  //   cardCvcBack.textContent = targetEl.value;
-  // }
-  // return;
-  console.log(targetEl.getAttribute('id'));
+  const targetElId = targetEl.getAttribute('id');
+
+  if(targetElId.startsWith('card_',)) {
+    const inputValue = targetEl.value.replaceAll(' ', '').toUpperCase(); // Remove space character
+    const paddedValue = inputValue.padEnd(16, '0');
+    const formattedValue = paddedValue.replace(/(.{4})/g, '$1 ').trim();
+    document.querySelector(`.card__${targetElId}`).textContent = formattedValue;
+  }
+  if(targetElId.startsWith('cardHold')){
+    document.querySelector(`.card__${targetElId}`).textContent = targetEl.value;
+  }
+  if(targetElId.startsWith('exp')){
+    document.querySelector(`.card__${targetElId}`).textContent = targetEl.value.padStart(2,'0');
+  }
+  if(targetElId.startsWith('cvc')){
+    document.querySelector(`.card__${targetElId}`).textContent = targetEl.value;
+  }
+  return;
 
 })
 
 //Rednder new form
 btnContinue.addEventListener('click',function(){
-  inputName.value = inputNumber.value = inputMonth.value = inputYear.value = inputCvc.value = '';
+  // inputName.value = inputNumber.value = inputMonth.value = inputYear.value = inputCvc.value = '';
   cardNameFront.textContent = 'Yozan Kaphle';
   cardNumberFront.textContent = '0000 0000 0000 0000';
   cardExpFrontMonth.textContent = '00';
@@ -147,4 +148,6 @@ btnContinue.addEventListener('click',function(){
   cardCvcBack.textContent = '000';
   inputForm.classList.remove('hidden');
   formSubmitted.classList.add('hidden');
+  
+  
 });
