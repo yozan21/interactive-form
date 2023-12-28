@@ -115,6 +115,7 @@ inputForm.addEventListener("submit", (e) => {
 //Real time data display
 inputForm.addEventListener('input', function(e){
   const targetEl = e.target
+  const formData = [...new FormData(inputForm)];
   // if(targetEl === inputNumber && targetEl.value.length <= 16) {
   //   console.log();
   //   const inputValue = targetEl.value.replaceAll(' ', '').toUpperCase(); // Remove space character
@@ -132,8 +133,8 @@ inputForm.addEventListener('input', function(e){
   //   cardCvcBack.textContent = targetEl.value;
   // }
   // return;
-  console.log(targetEl);
-  
+  console.log(targetEl.getAttribute('id'));
+
 })
 
 //Rednder new form
