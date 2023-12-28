@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css" />
+    <!--JS link-->
+    <script defer type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="card-container">
+        <div class="card card__front">
+          <div class="card__front-content">
+            <img
+              class="card__front-logo"
+              src="images/card-logo.svg"
+            />
+            <span class="card__front-number">0000 0000 0000 0000</span>
+            <span class="card__front-name">Yozan Kaphle</span>
+            <span class="card__front-exp"><span class="card__front-exp-month">00</span>/<span class ="card__front-exp-year">00</span></span>
+          </div>
+          <img
+            class="card_img card__front-img"
+            src="images/bg-card-front.png"
+            alt=""
+          />
+        </div>
+        <div class="card card__back">
+          <div class="card__back-content">
+            <span class="card__back-cvc">000</span>
+          </div>
+            <img
+            class="card_img card__back-img"
+            src="images/bg-card-back.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="form-container" >
+        <form class="details">
+          <div>
+            <p class="input_label Cname">Cardholder Name</p>
+            <input
+              id="cardHold_name"
+              type="text"
+              placeholder="e.g. Yozan Kaphle"
+              name="cardHold_name"
+            />
+            <span class="error-message">Wrong Format dgsfh</span>
+          </div>
+          <div>
+            <p class="input_label Cnumber">Card Number</p>
+            <input
+              id="card_number"
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+              name="card_number"
+            />
+            <span class="error-message">Wrong Format fhfd</span>
+          </div>
+          <div class="input__sideWays">
+            <div class="input__sideWays-exp">
+              <p class="input_label Cexp ">Exp. Date (MM/YY)</p>
+              <input id="exp_month" type="text" placeholder="MM" class="side-ways" maxlength="2" name="exp_month"/>
+              <input type="text" id="exp_year" placeholder="YY" class="side-ways" maxlength="2" name="exp_year"/>
+              <span class="error-message">Wrong Format,</span>
+            </div>
+            <div class="input__sideWays-cvc">
+              <p class="input_label Cvc">CVC</p>
+              <input type="text" id="cvc" placeholder="e.g. 123" maxlength="3" name="cvc"/>
+              <span class="error-message">Wrong Format  </span>
+            </div>
+          </div>
+          <button class="btn-confirm" name="confirm" type="submit">Confirm</button>
+        </form>
+        <div class="form-submitted hidden">
+          <img src="images/icon-complete.svg" alt="">
+          <p class="submitted__note-big">Thank you!</p>
+          <p class="submitted__note">We've added your card details</p>
+          <button class="btn-continue">Continue</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
