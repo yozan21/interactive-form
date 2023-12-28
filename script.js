@@ -10,7 +10,6 @@ const cardExpFrontYear = document.querySelector('.card__front-exp-year');
 const cardCvcBack = document.querySelector('.card__back-cvc');
 
 const inputForm = document.querySelector(".details");
-const btnConfirm = document.querySelector(".btn-confirm");
 const btnContinue = document.querySelector(".btn-continue");
 
 const errorMessages = document.querySelectorAll("span.error-message");
@@ -116,23 +115,25 @@ inputForm.addEventListener("submit", (e) => {
 //Real time data display
 inputForm.addEventListener('input', function(e){
   const targetEl = e.target
-  if(targetEl === inputNumber && targetEl.value.length <= 16) {
-    console.log();
-    const inputValue = targetEl.value.replaceAll(' ', '').toUpperCase(); // Remove space character
-    const paddedValue = inputValue.padEnd(16, '0');
-    const formattedValue = paddedValue.replace(/(.{4})/g, '$1 ').trim();
-    cardNumberFront.textContent = formattedValue;
-  }
-  if(targetEl === inputName){
-    cardNameFront.textContent = targetEl.value;
-  }
-  if(targetEl === inputMonth || targetEl === inputYear){
-    document.querySelector(`.card__front-${targetEl.id}`).textContent = targetEl.value.padStart(2,'0');
-  }
-  if(targetEl === inputCvc){
-    cardCvcBack.textContent = targetEl.value;
-  }
-  return;
+  // if(targetEl === inputNumber && targetEl.value.length <= 16) {
+  //   console.log();
+  //   const inputValue = targetEl.value.replaceAll(' ', '').toUpperCase(); // Remove space character
+  //   const paddedValue = inputValue.padEnd(16, '0');
+  //   const formattedValue = paddedValue.replace(/(.{4})/g, '$1 ').trim();
+  //   cardNumberFront.textContent = formattedValue;
+  // }
+  // if(targetEl === inputName){
+  //   cardNameFront.textContent = targetEl.value;
+  // }
+  // if(targetEl === inputMonth || targetEl === inputYear){
+  //   document.querySelector(`.card__front-${targetEl.id}`).textContent = targetEl.value.padStart(2,'0');
+  // }
+  // if(targetEl === inputCvc){
+  //   cardCvcBack.textContent = targetEl.value;
+  // }
+  // return;
+  console.log(targetEl);
+  
 })
 
 //Rednder new form

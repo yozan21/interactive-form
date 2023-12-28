@@ -235,7 +235,8 @@ input#cvc{
         flex-direction: column-reverse;
         align-items: flex-start;
         justify-content: center;
-        flex-grow: 2;
+        flex-grow: 1;
+        height: 100px;
     }
     .card{
         position: relative;
@@ -243,11 +244,16 @@ input#cvc{
     }
     .card__front{
         align-self: start;
+        top: 0.7rem;
     }
     .card_img{
         height: 9.2rem;
         width: 17rem;
         margin: 0px 0 0px 0px;
+    }
+    .card__front-img{
+        position: relative;
+        z-index: 3;
     }
     .card__back{
         align-self: flex-end;
@@ -255,6 +261,7 @@ input#cvc{
     }
     .card__back-img{
         left: 0;
+        top: 5rem;
     }
     .card__front-content{
         width: 100%;
@@ -262,6 +269,7 @@ input#cvc{
         top: 1rem;
         left: 1rem;
         color: var(--color-neutral-white);
+        z-index: 4;
     }
     
     .card__front-logo{
@@ -291,15 +299,15 @@ input#cvc{
     .card__back-content{
         position: absolute;
         color: var(--color-neutral-white);
-        margin-top: 6rem;
-        margin-left: 0rem;
         z-index: 1;
-        /* top: 15rem;
-        left: 7rem; */
+        margin-top: 0rem;
+        margin-left: 0rem;
+        top: 8.8rem;
+        left: 13rem;
     }
     .form-container{
-        padding: 25px;
-        flex-grow: 3;
+        padding: 80px 18px 25px;
+        flex-grow: 1;
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
@@ -307,5 +315,11 @@ input#cvc{
     .details{
         width: 100%;
     }
-    
+    input.side-ways{
+        width: 18%;
+        margin-right: 5px;
+    }
+    .form-submitted{
+        width: 100%;
+    }
 }
