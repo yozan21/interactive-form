@@ -158,7 +158,7 @@ input.side-ways{
     flex-wrap: nowrap;
 }
 .input__sideWays-exp{
-    width: 140%;
+    width: 120%;
 }
 input#cvc{ 
     width: 74%;
